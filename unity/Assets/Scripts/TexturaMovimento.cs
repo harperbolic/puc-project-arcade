@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TexturaMovimento : MonoBehaviour
 {
-    public float scrollSpeed = 0.5f;
+    private float scrollSpeed = 0.5f;
 
     void Update()
     {
