@@ -1,4 +1,4 @@
-# PUC Arcade I
+# gRIFF
 
 Repositório para criação do Jogo Arcade I da PUC Minas
 
