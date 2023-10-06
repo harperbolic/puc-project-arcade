@@ -85,8 +85,16 @@ git checkout -b nome-da-sua-branch
 # exemplo:
 git checkout -b feature/camera-follow-ARC-15
 ```
+Use a convenção de [tipo]/[descrição]
 
-**Lembre-se**: Sempre ao iniciar uma nova funcionalidade, criar uma branch nova.
+tipos:
+feat       -    para adicionar uma nova função
+bug        -    para correção de bugs    
+
+caso seja do tipo bug, não se esqueça de começar a descrição com o número da Issue no github
+a descrição deve ser algo legível e descritivo sobre a função que a branch tem
+
+**Lembre-se**: Sempre ao iniciar uma nova funcionalidade ou bugfix, crie uma branch nova.
 
 ### Faça Mudanças
 Agora, você pode editar o código, adicionar arquivos ou fazer qualquer alteração necessária no projeto.
