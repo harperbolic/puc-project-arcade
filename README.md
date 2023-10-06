@@ -4,15 +4,17 @@ Repositório para criação do Jogo Arcade I da PUC Minas
 
 ## Tecnologias
 
-- Unity 2023.1.x
+- Unity 2022.3.8f1
 - Blender
 - Git
 - Github
 
 ## Documentações
 
-- Confluence
-- Jira (tasks)
+- Miro
+- Discord
+- Google Drive
+- GitHub (issues e tasks)
 
 ## Estrutura de pastas
 
@@ -72,7 +74,7 @@ O GitHub é uma plataforma que ajuda equipes a colaborar no desenvolvimento de p
 Primeiro, faça uma cópia do projeto do GitHub para o seu computador.
 
 ```sh
-git clone git@github.com:rafaeldsb/puc-project-arcade.git
+git clone git@github.com:harperbolic/puc-project-arcade.git
 ```
 
 ### Crie uma Branch
