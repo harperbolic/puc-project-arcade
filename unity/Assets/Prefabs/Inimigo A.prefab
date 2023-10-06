@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 4467929492373622105}
   - component: {fileID: 7926096792411884784}
   - component: {fileID: 7139956928180592833}
-  - component: {fileID: 3141418377917801361}
-  - component: {fileID: -1659762337046254954}
   m_Layer: 6
   m_Name: Inimigo A
   m_TagString: Untagged
@@ -123,43 +121,3 @@ MonoBehaviour:
   tempoTiro: 1.5
   projetil: {fileID: 317455828755010418, guid: e9576756bb925a34ba192b75036f13e7, type: 3}
   velocidade: -3
---- !u!114 &3141418377917801361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2537977478247289798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1a86710597d2a4f8c090fc9f9c2d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
---- !u!54 &-1659762337046254954
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2537977478247289798}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
