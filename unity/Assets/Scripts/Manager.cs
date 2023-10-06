@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FPS : MonoBehaviour
+public class Manager : MonoBehaviour
 {
-    public int targetFPS = 60;
+    [SerializeField] private int targetFPS;
 
     void Awake()
     {

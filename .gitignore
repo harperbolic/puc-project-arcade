@@ -14,6 +14,7 @@ unity/[Bb]uild/
 unity/[Bb]uilds/
 unity/[Ll]ogs/
 unity/[Uu]ser[Ss]ettings/
+unity/.idea/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
