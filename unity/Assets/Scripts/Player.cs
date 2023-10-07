@@ -12,8 +12,16 @@ public class Player : MonoBehaviour
         //TODO Checar se é um inimigo, obstáculo ou bala, atualmente a colisão só é efetuada com as balas
         if (collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
+	    if (hp <= 0)
+       	    {
+            SceneManager.LoadScene("GameOverScreen");
+            Destroy(this.gameObject);
+            }
+	    else
+	    {
             hp--;
             Destroy(collided.gameObject);
+	    }
         }
     }
     public float velocidadeMovimento = 5.0f;
@@ -23,11 +31,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (hp <= 0)
-        {
-            SceneManager.LoadScene("GameOverScreen");
-            Destroy(this.gameObject);
-        }
         // Obtém a entrada do jogador no eixo horizontal (teclas A e D, setas esquerda e direita, etc.)
         float movimentoHorizontal = Input.GetAxis("Horizontal");
 
