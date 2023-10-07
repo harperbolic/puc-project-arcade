@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class InstantKill : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision colidido)
+    private void OnCollisionEnter(Collision collided)
     {
-        if (colidido.gameObject.CompareTag("Player")||colidido.gameObject.CompareTag("Bala"))
+        if (collided.gameObject.CompareTag("Player")||collided.gameObject.CompareTag("Bala"))
         {
-            Destroy(colidido.gameObject);
+            Destroy(collided.gameObject);
         }
     }
 }
