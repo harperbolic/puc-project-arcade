@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7926096792411884784}
   - component: {fileID: 7139956928180592833}
   m_Layer: 6
-  m_Name: Inimigo A
+  m_Name: enemyBlackBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
