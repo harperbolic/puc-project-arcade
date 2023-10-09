@@ -5,31 +5,43 @@ using UnityEngine;
 public class Overdrive : MonoBehaviour
 {
 
-    private bool load;
+    private bool canOverdrive;
     public bool isOverdrive;
 
-    // Start is called before the first frame update
+    [SerializeField] private float overdrivePower = 24f;
+    [SerializeField] private float overdriveTime = 0.2f;
+
+
     void Start()
     {
-        load = true;
+        canOverdrive = true;
 	isOverdrive = false;
     }
 
-    [SerializeField] private float boostValue;
 
 
-    // Update is called once per frame
     void Update()
     {
 
-	if (load == true || Input.GetButtonDown("Overdrive"))
+	if (canOverdrive == true && Input.GetButtonDown("Overdrive"))
 	{
-		load = false;
-		isOverdrive = true;
-
-		Vector3 newPos = transform.position + Vector3.up * (boostValue);
-
-		
+		StartCoroutine(overdrive());
 	}
     }
+
+    IEnumerator overdrive()
+    {
+	float startTime = Time.time;
+
+	canOverdrive = false;
+	isOverdrive = true;
+
+	transform.Translate(Vector3.forward * overdrivePower);
+	yield return new WaitForSeconds(0.2f);
+	transform.Translate(Vector3.forward * (-1 * overdrivePower));
+	
+	isOverdrive = false;
+	yield return null;
+    }
+
 }
