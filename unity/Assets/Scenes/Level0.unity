@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1b8a1d69dcbfa4d8e5780d977609da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &285738668
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +379,7 @@ GameObject:
   - component: {fileID: 285738670}
   - component: {fileID: 285738669}
   - component: {fileID: 285738676}
+  - component: {fileID: 285738677}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -465,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 285738668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -483,12 +485,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0d6bf0efa24374c8f7449065938ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 1
   bulletSpeed: 0.9
   velocidadeMovimento: 10
-  limiteEsquerdo: -5
-  limiteDireito: 5
+  limiteEsquerdo: -4
+  limiteDireito: 4
   playerBullet: {fileID: 321893313715467970, guid: 9b2869dcd5ad4244fbc4cbe62fe6c9be, type: 3}
+--- !u!114 &285738677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285738668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d26f0f738cefd409cc52c8d822c634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOverdrive: 0
+  boostValue: 20
 --- !u!1 &446968889
 GameObject:
   m_ObjectHideFlags: 0
