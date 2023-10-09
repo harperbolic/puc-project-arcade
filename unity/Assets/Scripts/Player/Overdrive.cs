@@ -37,7 +37,7 @@ public class Overdrive : MonoBehaviour
 	isOverdrive = true;
 
 	transform.Translate(Vector3.forward * overdrivePower);
-	yield return new WaitForSeconds(0.2f);
+	yield return new WaitForSeconds(overdriveTime);
 	transform.Translate(Vector3.forward * (-1 * overdrivePower));
 	
 	isOverdrive = false;
