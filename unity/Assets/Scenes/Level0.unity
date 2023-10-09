@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOverdrive: 0
-  overdrivePower: 24
+  overdrivePower: 2
   overdriveTime: 0.2
 --- !u!54 &285738678
 Rigidbody:
