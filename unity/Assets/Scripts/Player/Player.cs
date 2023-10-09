@@ -25,8 +25,8 @@ public class Player : MonoBehaviour
         }
     }
     public float velocidadeMovimento = 5.0f;
-    public float limiteEsquerdo = -5.0f; // Limite esquerdo da área retangular
-    public float limiteDireito = 5.0f;   // Limite direito da área retangular
+    public float limiteEsquerdo = -4.0f; // Limite esquerdo da área retangular
+    public float limiteDireito = 4.0f;   // Limite direito da área retangular
     [SerializeField] private GameObject playerBullet;
 
     void Update()
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         // Atualiza a posição da nave
         transform.position = novaPosicao;
 
-        if (Input.GetButtonDown("Atirar"))
+        if (Input.GetButtonDown("Shoot"))
         {
             Instantiate(playerBullet, transform.position,Quaternion.identity).GetComponent<Bullet>().DefineBullet(true,bulletSpeed);
         }
