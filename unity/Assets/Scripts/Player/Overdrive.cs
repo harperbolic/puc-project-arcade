@@ -8,7 +8,7 @@ public class Overdrive : MonoBehaviour
     private bool canOverdrive;
     public bool isOverdrive;
 
-    [SerializeField] private float overdrivePower = 24f;
+    [SerializeField] private float overdrivePower = 2.0f;
     [SerializeField] private float overdriveTime = 0.2f;
 
 
@@ -31,8 +31,6 @@ public class Overdrive : MonoBehaviour
 
     IEnumerator overdrive()
     {
-	float startTime = Time.time;
-
 	canOverdrive = false;
 	isOverdrive = true;
 
