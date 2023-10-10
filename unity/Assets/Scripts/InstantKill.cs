@@ -4,27 +4,12 @@ using UnityEngine;
 
 public class InstantKill : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision colidido)
+    private void OnCollisionEnter(Collision collided)
     {
-        if (colidido.gameObject.CompareTag("Player"))
+        if (collided.gameObject.CompareTag("Player")||collided.gameObject.CompareTag("Bala"))
         {
-            Destroy(colidido.gameObject);
+            Destroy(collided.gameObject);
         }
-        if (colidido.gameObject.CompareTag("Bala"))
-        {
-            Destroy(colidido.gameObject);
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
     }
 }
 
