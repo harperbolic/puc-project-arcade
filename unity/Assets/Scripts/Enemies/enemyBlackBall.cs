@@ -31,4 +31,11 @@ public class enemyBlackBall : MonoBehaviour
         Vector3 movimento = new Vector3(movimentoHorizontal, 0.0f, movimentoVertical);
         transform.Translate(movimento * Time.deltaTime);
     }
+    private void OnCollisionEnter(Collision collided)
+    {
+        if (collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(false))
+        {
+            Destroy(this.gameObject);
+            }
+    }
 }

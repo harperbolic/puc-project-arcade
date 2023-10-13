@@ -26,6 +26,8 @@ public class Bullet : MonoBehaviour
     //Checa se o projétil deveria dar dano
     //Fazendo com que projéteis do jogador e dos inimigos não deem danos em quem os dispara
     //Retorna true caso a entidade deva receber dano
+    //targetIsPlayer, se o script que chamou pertence oa jogador
+    //isPlayer, o projétil pertence ao jogador
     public bool DamageCheck(bool targetIsPlayer)
     {
         if (isPlayer == targetIsPlayer)
