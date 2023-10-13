@@ -26,7 +26,7 @@ public class levelSpawner : MonoBehaviour
 		if (level.rows.Length >= nextRow + 1)
 		{
 			//StartSpawn();
-			//SceneManager.LoadScene("MainMenu");
+			SceneManager.LoadScene("MainMenu");
 			
 		}
 		else
