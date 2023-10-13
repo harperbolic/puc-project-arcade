@@ -16,4 +16,20 @@ MonoBehaviour:
   - spawnPoints:
     - position: 3
       spawnEntity: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
-    secondsToNextRow: 2
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 6
+      spawnEntity: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 6
+      spawnEntity: {fileID: 827757396236092952, guid: 77dc834b6959a1b4d8e77321ea4b364c, type: 3}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 0
+      spawnEntity: {fileID: 827757396236092952, guid: 77dc834b6959a1b4d8e77321ea4b364c, type: 3}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 0
+      spawnEntity: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
+    secondsToNextRow: 5

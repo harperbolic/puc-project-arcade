@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class levelSpawner : MonoBehaviour
 {
 	[SerializeField]
 	private float secondsToStart;
-	[SerializeField]
-	private Level level;
+	[SerializeField] private Level level;
 	private int nextRow;
 	[SerializeField] private GameObject[] spawnPoints;
 	private void Start()
@@ -23,21 +21,12 @@ public class levelSpawner : MonoBehaviour
 			{
 				Instantiate(toSpawn.spawnEntity, spawnPoints[toSpawn.position].transform);
 			}
-		if (level.rows.Length >= nextRow + 1)
-		{
-			//StartSpawn();
-			SceneManager.LoadScene("Victory");
-			
-		}
-		else
-		{
 			yield return Spawn(level.rows[nextRow].secondsToNextRow, level.rows[++nextRow]);
-		}
 	}
 	private void StartSpawn()
 	{
 		//Logar quantos segundos dura a seção da fase (útil para evitar manter a fase curta ou longa demais)
-		float levelLength = 60;
+		float levelLength = 20;
 		foreach (var row in level.rows)
 		{
 			levelLength += row.secondsToNextRow;
