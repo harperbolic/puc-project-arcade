@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    public static int bgmPercent = 100;
+
     [SerializeField] private int targetFPS;
 
     [SerializeField] private GameObject BGMSystem;
@@ -13,6 +15,6 @@ public class Manager : MonoBehaviour
     {
         Application.targetFrameRate = targetFPS;
 
-	Instantiate(BGMSystem);
+	Instantiate(BGMSystem).GetComponent<{}>;
     }
 }
