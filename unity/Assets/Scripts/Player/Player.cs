@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collided)
     {
         //TODO Checar se é um inimigo, obstáculo ou bala, atualmente a colisão só é efetuada com as balas
-        if (collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
+        if (collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
 	    if (hp <= 0)
        	    {
