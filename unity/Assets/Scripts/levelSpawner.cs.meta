@@ -3,47 +3,7 @@ guid: 6f1b8a1d69dcbfa4d8e5780d977609da
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - inimigoPrefab1: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
-  - posicao1: {instanceID: 0}
-  - inimigoPrefab2: {instanceID: 0}
-  - posicao2: {instanceID: 0}
-  - inimigoPrefab3: {instanceID: 0}
-  - posicao3: {instanceID: 0}
-  - inimigoPrefab4: {instanceID: 0}
-  - posicao4: {instanceID: 0}
-  - inimigoPrefab5: {instanceID: 0}
-  - posicao5: {instanceID: 0}
-  - inimigoPrefab6: {instanceID: 0}
-  - posicao6: {instanceID: 0}
-  - inimigoPrefab7: {instanceID: 0}
-  - posicao7: {instanceID: 0}
-  - inimigoPrefab8: {instanceID: 0}
-  - posicao8: {instanceID: 0}
-  - inimigoPrefab9: {instanceID: 0}
-  - posicao9: {instanceID: 0}
-  - inimigoPrefab10: {instanceID: 0}
-  - posicao10: {instanceID: 0}
-  - inimigoPrefab11: {instanceID: 0}
-  - posicao11: {instanceID: 0}
-  - inimigoPrefab12: {instanceID: 0}
-  - posicao12: {instanceID: 0}
-  - inimigoPrefab13: {instanceID: 0}
-  - posicao13: {instanceID: 0}
-  - inimigoPrefab14: {instanceID: 0}
-  - posicao14: {instanceID: 0}
-  - inimigoPrefab15: {instanceID: 0}
-  - posicao15: {instanceID: 0}
-  - inimigoPrefab16: {instanceID: 0}
-  - posicao16: {instanceID: 0}
-  - inimigoPrefab17: {instanceID: 0}
-  - posicao17: {instanceID: 0}
-  - inimigoPrefab18: {instanceID: 0}
-  - posicao18: {instanceID: 0}
-  - inimigoPrefab19: {instanceID: 0}
-  - posicao19: {instanceID: 0}
-  - inimigoPrefab20: {instanceID: 0}
-  - posicao20: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
