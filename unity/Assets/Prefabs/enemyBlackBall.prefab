@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5346280296960613104}
   - component: {fileID: 6086440746105702903}
   - component: {fileID: 4467929492373622105}
-  - component: {fileID: 7926096792411884784}
+  - component: {fileID: 8319794979741136899}
   - component: {fileID: 7139956928180592833}
   m_Layer: 6
   m_Name: enemyBlackBall
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7926096792411884784
-SphereCollider:
+--- !u!136 &8319794979741136899
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,8 +103,10 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 5
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7139956928180592833
 MonoBehaviour:
@@ -120,5 +122,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 1.5
   time: 0
-  enemyBullet: {fileID: 317455828755010418, guid: e9576756bb925a34ba192b75036f13e7, type: 3}
+  enemyBullet: {fileID: 6110750578568246658, guid: 5ae0267ddf6e2934c93ea7cde7a09a96, type: 3}
   speed: 3
