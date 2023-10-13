@@ -26,7 +26,7 @@ public class levelSpawner : MonoBehaviour
 		if (level.rows.Length >= nextRow + 1)
 		{
 			//StartSpawn();
-			SceneManager.LoadScene("MainMenu");
+			SceneManager.LoadScene("Victory");
 			
 		}
 		else
@@ -37,7 +37,7 @@ public class levelSpawner : MonoBehaviour
 	private void StartSpawn()
 	{
 		//Logar quantos segundos dura a seção da fase (útil para evitar manter a fase curta ou longa demais)
-		float levelLength = 0;
+		float levelLength = 60;
 		foreach (var row in level.rows)
 		{
 			levelLength += row.secondsToNextRow;
