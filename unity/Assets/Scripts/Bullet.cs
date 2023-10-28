@@ -30,10 +30,6 @@ public class Bullet : MonoBehaviour
     //isPlayer, o projétil pertence ao jogador
     public bool DamageCheck(bool targetIsPlayer)
     {
-        if (isPlayer == targetIsPlayer)
-        {
-            return false;
-        }
-        return true;
+        return isPlayer != targetIsPlayer;
     }
 }
