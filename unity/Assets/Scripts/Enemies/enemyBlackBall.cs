@@ -8,13 +8,11 @@ public class enemyBlackBall : MonoBehaviour
     [SerializeField] private float time;
     [SerializeField]private GameObject enemyBullet;
     [SerializeField] private float speed;
-    // Start is called before the first frame update
     void Start()
     {
         time = attackSpeed;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (time <= 0)

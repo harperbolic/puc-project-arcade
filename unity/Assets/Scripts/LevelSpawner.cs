@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class levelSpawner : MonoBehaviour
+public class LevelSpawner : MonoBehaviour
 {
 	[SerializeField]
 	private float secondsToStart;
