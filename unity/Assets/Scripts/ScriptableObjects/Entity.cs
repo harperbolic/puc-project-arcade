@@ -1,6 +1,6 @@
 using UnityEngine;
 [System.Serializable]
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Level", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Entity", order = 1)]
 public class Entity : ScriptableObject
 {
     public enum MovementTypes
