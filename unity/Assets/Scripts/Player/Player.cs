@@ -48,4 +48,9 @@ public class Player : MonoBehaviour
             Instantiate(playerBullet, transform.position,Quaternion.identity).GetComponent<Bullet>().DefineBullet(true,bulletSpeed);
         }
     }
+
+    public float GetXLocation()
+    {
+        return transform.position.x;
+    }
 }

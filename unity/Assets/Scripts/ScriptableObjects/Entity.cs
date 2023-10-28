@@ -20,9 +20,10 @@ public class Entity : ScriptableObject
 
     public EntityTypes entType;
     public MovementTypes movType;
-    public bool canBeKilled;
+    public int hp;
+    public bool takesBulletDamage;
     public bool doesContactDamage;
     public bool shootsProjectiles;
-    public GameObject enemyModel;
+    public GameObject entityPrefab;
 
 }
