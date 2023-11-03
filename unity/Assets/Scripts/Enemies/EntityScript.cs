@@ -6,12 +6,12 @@ using UnityEngine;
 public class EntityScript : MonoBehaviour
 {
     public Entity entity;
-    [SerializeField] private Player player;
     private int hp;
     private int speed;
-    private int currentSpot = 0;
     [NonSerialized]
     public LevelSpawner levelSpawner;
+    [NonSerialized]
+    public Player player;
     void Start()
     {
         hp = entity.hp;
@@ -74,7 +74,7 @@ public class EntityScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(bRate);
-            Instantiate(bullet).GetComponent<Bullet>().DefineBullet(false, bSpeed);
+            Instantiate(bullet,transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
         }
     }
     private IEnumerator FollowMove()
@@ -83,8 +83,8 @@ public class EntityScript : MonoBehaviour
         {
             var ePosition = transform.position;
             Vector3 playerDirection = new Vector3(player.GetPlayerPosition().x,ePosition.y,ePosition.z);
-            transform.Translate(playerDirection * (-1 * speed * Time.deltaTime));
-            transform.Translate(Vector3.forward * (-1 *speed * Time.deltaTime));
+            transform.position = Vector3.MoveTowards(ePosition, playerDirection, Time.deltaTime);
+            transform.Translate(Vector3.forward * (speed * Time.deltaTime));
             yield return null;
         }
     }
@@ -92,20 +92,18 @@ public class EntityScript : MonoBehaviour
     {
         while (true)
         {
-            transform.Translate(Vector3.forward * (-1 * speed * Time.deltaTime));
+            transform.Translate(Vector3.forward * (speed * Time.deltaTime));
             yield return null;
         }
     }
     private IEnumerator SetMove()
     {
-        var spots = entity.spots;
         while (true)
         {
-            var spotX = levelSpawner.GetSpawnPoint(spots[currentSpot].spot);
-            yield return StartCoroutine(MoveNext(spotX,spots[currentSpot].movLength));
-            if (++currentSpot > spots.Length)
+            foreach (var nSpot in entity.spots)
             {
-                currentSpot = 0;
+                var spotX = levelSpawner.GetSpawnPoint(nSpot.spot);
+                yield return StartCoroutine(MoveNext(spotX,nSpot.movLength));
             }
         }
     }
@@ -116,7 +114,7 @@ public class EntityScript : MonoBehaviour
         float initialPosition = ePosition.x;
         while (timePassed < movLength)
         {
-            transform.position.Set(Mathf.Lerp(initialPosition, destinationX, timePassed / movLength),ePosition.y,ePosition.z);
+            transform.position = Vector3.Lerp(new Vector3(initialPosition,ePosition.y,ePosition.z), new Vector3(destinationX,ePosition.y,ePosition.z), timePassed / movLength);
             transform.Translate(Vector3.forward * (speed * Time.deltaTime));
             ePosition = transform.position;
             timePassed += Time.deltaTime;

@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToStart: 3
-  level: {fileID: 11400000, guid: 1e8b3f974b9e6124e92b379e8843b23a, type: 2}
+  level: {fileID: 11400000, guid: afd3a109dc5bafd42b122c0522b63661, type: 2}
   spawnPoints:
   - {fileID: 1388309314}
   - {fileID: 969140210}
@@ -376,6 +376,7 @@ MonoBehaviour:
   - {fileID: 1459072004}
   - {fileID: 2076352977}
   - {fileID: 1302152572}
+  player: {fileID: 285738676}
 --- !u!1 &285738668
 GameObject:
   m_ObjectHideFlags: 0

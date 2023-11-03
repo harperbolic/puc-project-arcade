@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
             TakeDamage();
             Destroy(collided.gameObject);
         }
-        else if(collided.rigidbody.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
+        else if(collided.rigidbody.gameObject.GetComponent<EntityScript>() && collided.rigidbody.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
         {
             TakeDamage();
             Destroy(collided.rigidbody.gameObject);

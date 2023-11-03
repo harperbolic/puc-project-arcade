@@ -8,20 +8,13 @@ public class Bullet : MonoBehaviour
     private float speed;
     void Update()
     {
-
         transform.Translate( 0 , 0 , speed);
-        
-        Destroy(this.gameObject, 0.9F); //TODO Remover condição por tempo de autodestruição da bala, realizando a autodestruição considerando a posição
     }
     //Define a velocidade inicial da bala e quem a disparou
     public void DefineBullet(bool bisPlayer, float bSpeed)
     {
         isPlayer = bisPlayer;
         speed = bSpeed;
-        if (!isPlayer)
-        {
-            speed = speed * -1;
-        }
     }
     //Checa se o projétil deveria dar dano
     //Fazendo com que projéteis do jogador e dos inimigos não deem danos em quem os dispara

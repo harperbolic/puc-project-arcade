@@ -9,6 +9,8 @@ public class LevelSpawner : MonoBehaviour
 	private float secondsToStart;
 	[SerializeField] private Level level;
 	public GameObject[] spawnPoints;
+
+	[SerializeField] private Player player;
 	private void Start()
 	{
 		StartCoroutine(Spawn());
@@ -29,9 +31,11 @@ public class LevelSpawner : MonoBehaviour
 		{
 			foreach (var toSpawn in row.spawnPoints)
 			{
-				var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab, spawnPoints[toSpawn.position].transform);
+				var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab,
+					spawnPoints[toSpawn.position].transform.position, Quaternion.Euler(0,180f,0));
 				var entityScript = spawnedEntity.AddComponent<EntityScript>();
 				entityScript.levelSpawner = this;
+				entityScript.player = player;
 				entityScript.SetEntity(toSpawn.spawnEntity);
 			}
 			yield return new WaitForSeconds(row.secondsToNextRow);
