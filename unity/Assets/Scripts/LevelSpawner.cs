@@ -9,7 +9,7 @@ public class LevelSpawner : MonoBehaviour
 	private float secondsToStart;
 	[SerializeField] private Level level;
 	private int nextRow;
-	[SerializeField] private GameObject[] spawnPoints;
+	private static GameObject[] spawnPoints;
 	private void Start()
 	{
 		StartSpawn();
@@ -21,7 +21,8 @@ public class LevelSpawner : MonoBehaviour
 		foreach (var toSpawn in rowToSpawn.spawnPoints)
 		{
 			var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab, spawnPoints[toSpawn.position].transform);
-			spawnedEntity.GetComponent<EntityScript>().SetEntity(toSpawn.spawnEntity,toSpawn.entitySpeed);
+			var entityScript = spawnedEntity.AddComponent<EntityScript>();
+			entityScript.SetEntity(toSpawn.spawnEntity);
 		}
 		nextRow++;
 		if (level.rows.Length < nextRow)
@@ -46,5 +47,10 @@ public class LevelSpawner : MonoBehaviour
 		Debug.Log("Essa seção durará um total de: " + (levelLength) + " segundos");
 		nextRow = 0;
 		StartCoroutine(Spawn(secondsToStart,level.rows[0]));
+	}
+
+	public static float GetSpawnPoint (int s)
+	{
+		return spawnPoints[s].transform.position.x;
 	}
 }

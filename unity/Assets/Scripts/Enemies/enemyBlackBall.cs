@@ -24,7 +24,7 @@ public class enemyBlackBall : MonoBehaviour
         {
         time -= Time.deltaTime;
         }
-        float movimentoHorizontal = Mathf.Sin(Time.time) * speed * 0.8f; 
+        float movimentoHorizontal = Mathf.Sin(Time.time) * speed * 0.8f;
         float movimentoVertical = 0.5f * speed * -1;
         Vector3 movimento = new Vector3(movimentoHorizontal, 0.0f, movimentoVertical);
         transform.Translate(movimento * Time.deltaTime);
@@ -36,4 +36,4 @@ public class enemyBlackBall : MonoBehaviour
             Destroy(this.gameObject);
             }
     }
-}
+}    

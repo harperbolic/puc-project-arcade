@@ -15,10 +15,8 @@ public class Overdrive : MonoBehaviour
     void Start()
     {
         canOverdrive = true;
-	isOverdrive = false;
+		isOverdrive = false;
     }
-
-
 
     void Update()
     {
