@@ -5,25 +5,42 @@ public class Entity : ScriptableObject
 {
     public enum MovementTypes
     {
-        Zigzag, //Move-se para frente enquanto se movimenta-se para os lados em zigzag
+        SetMovement, //Move-se para pontos pré-determinados em loop
         Straight, //Move-se para frente sem qualquer movimento para os lados
-        Follow, //Avança imitando o movimenbto lateral do jogador
+        Follow, //Avança imitando o movimento lateral do jogador
         None //Não move-se
     }
     public enum EntityTypes
     {
         Enemy, //Inimigo: Pode ser destruído para recarregar seu overdrive
         Obstacle, //Obstáculo, pode dar dano ou atrapalhar o jogador de alguma forma, alguns podem ser destruídos pelo overdrive, outros devem apenas ser evitados
-        PowerUp, //Powerup, tenta
+        PowerUp, //Powerup
         Other //Qualquer coisa que não se encaixe nas outra categorias
     }
-
+    [System.Serializable]
+    public class Spot
+    {
+        public int spot;
+        public float movLength;
+    }
+    
     public EntityTypes entType;
     public MovementTypes movType;
+    public GameObject entityPrefab;
     public int hp;
+    public int speed;
     public bool takesBulletDamage;
     public bool doesContactDamage;
     public bool shootsProjectiles;
-    public GameObject entityPrefab;
+    //Nulos se não disparar projéteis
+    public GameObject projectilePrefab;
+    public float projectileSpeed;
+    //Tempo até próximo disparo
+    public float projectileRate;
+    //Usado apenas em entidades com movType SetMovement
+    public Spot[] spots;
+    public bool selfDestructs;
+    //Usado apenas em entidades com selfDestructs
+    public float timeToSelfDestruct;
 
 }

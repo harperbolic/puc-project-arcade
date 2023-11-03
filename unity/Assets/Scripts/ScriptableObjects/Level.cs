@@ -4,7 +4,6 @@ public class SpawnPoint
 {
     public int position;    //0-6, com cada número simbolizando um dos espaços separados pelas cordas
     public Entity spawnEntity;
-    public int entitySpeed;
 }
 [System.Serializable]
 public class Row
