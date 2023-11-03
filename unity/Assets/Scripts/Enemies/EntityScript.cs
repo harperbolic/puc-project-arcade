@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class EntityScript : MonoBehaviour
     private int hp;
     private int speed;
     private int currentSpot = 0;
+    [NonSerialized]
+    public LevelSpawner levelSpawner;
     void Start()
     {
         hp = entity.hp;
@@ -98,7 +101,7 @@ public class EntityScript : MonoBehaviour
         var spots = entity.spots;
         while (true)
         {
-            var spotX = LevelSpawner.GetSpawnPoint(spots[currentSpot].spot);
+            var spotX = levelSpawner.GetSpawnPoint(spots[currentSpot].spot);
             yield return StartCoroutine(MoveNext(spotX,spots[currentSpot].movLength));
             if (++currentSpot > spots.Length)
             {
