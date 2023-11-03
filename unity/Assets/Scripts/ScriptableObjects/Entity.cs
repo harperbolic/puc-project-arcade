@@ -20,7 +20,9 @@ public class Entity : ScriptableObject
     [System.Serializable]
     public class Spot
     {
+        //0-6, com cada número simbolizando um dos espaços separados pelas cordas
         public int spot;
+        //Duração do movimento (em segundos)
         public float movLength;
     }
     
