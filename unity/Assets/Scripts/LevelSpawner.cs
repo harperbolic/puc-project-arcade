@@ -8,35 +8,13 @@ public class LevelSpawner : MonoBehaviour
 	[SerializeField]
 	private float secondsToStart;
 	[SerializeField] private Level level;
-	private int nextRow;
-	private static GameObject[] spawnPoints;
+	public GameObject[] spawnPoints;
 	private void Start()
 	{
-		StartSpawn();
+		StartCoroutine(Spawn());
 	}
 
-	private IEnumerator Spawn(float timeToWait, Row rowToSpawn)
-	{
-		yield return new WaitForSeconds(timeToWait);
-		foreach (var toSpawn in rowToSpawn.spawnPoints)
-		{
-			var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab, spawnPoints[toSpawn.position].transform);
-			var entityScript = spawnedEntity.AddComponent<EntityScript>();
-			entityScript.SetEntity(toSpawn.spawnEntity);
-		}
-		nextRow++;
-		if (level.rows.Length < nextRow)
-		{
-			yield return Spawn(level.rows[nextRow - 1].secondsToNextRow, level.rows[nextRow]);
-		}
-		else
-		{
-			//TODO TROCAR SEÇÕES DO LEVEL - Fazer para a etapa 3
-			SceneManager.LoadScene("Victory");
-		}
-	}
-
-	private void StartSpawn()
+	private IEnumerator Spawn()
 	{
 		//Logar quantos segundos dura a seção da fase (útil para evitar manter a fase curta ou longa demais)
 		float levelLength = secondsToStart;
@@ -45,11 +23,23 @@ public class LevelSpawner : MonoBehaviour
 			levelLength += row.secondsToNextRow;
 		}
 		Debug.Log("Essa seção durará um total de: " + (levelLength) + " segundos");
-		nextRow = 0;
-		StartCoroutine(Spawn(secondsToStart,level.rows[0]));
+		yield return new WaitForSeconds(secondsToStart);
+		
+		foreach (var row in level.rows)
+		{
+			foreach (var toSpawn in row.spawnPoints)
+			{
+				var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab, spawnPoints[toSpawn.position].transform);
+				var entityScript = spawnedEntity.AddComponent<EntityScript>();
+				entityScript.levelSpawner = this;
+				entityScript.SetEntity(toSpawn.spawnEntity);
+			}
+			yield return new WaitForSeconds(row.secondsToNextRow);
+		}
+		//TODO TROCAR SEÇÕES DO LEVEL - Fazer para a etapa 3
+		SceneManager.LoadScene("Victory");
 	}
-
-	public static float GetSpawnPoint (int s)
+	public float GetSpawnPoint (int s)
 	{
 		return spawnPoints[s].transform.position.x;
 	}
