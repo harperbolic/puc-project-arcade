@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 5439548024253417665}
   - component: {fileID: 2879923046596455427}
   - component: {fileID: 4523991661759688426}
-  - component: {fileID: 7330112383331845472}
-  - component: {fileID: 4145972981465393424}
   m_Layer: 0
   m_Name: Choque 1
   m_TagString: Untagged
@@ -121,28 +119,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -1
---- !u!114 &7330112383331845472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601652653876858685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a62929c2d3f72dd4397dc0184fec9b00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4145972981465393424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 601652653876858685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f77a4391096540489df9fc7f9c9027d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tempoemtela: 4
