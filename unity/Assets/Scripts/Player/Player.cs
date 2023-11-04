@@ -9,19 +9,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     private void OnCollisionEnter(Collision collided)
     {
-        //TODO Checar se é um inimigo, obstáculo ou bala, atualmente a colisão só é efetuada com as balas
         if (collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
-	    if (hp <= 0)
-       	    {
-            SceneManager.LoadScene("GameOverScreen");
-            Destroy(this.gameObject);
-            }
-	    else
-	    {
-            hp--;
+            TakeDamage();
             Destroy(collided.gameObject);
-	    }
+        }
+        else if(collided.rigidbody.gameObject.GetComponent<EntityScript>() && collided.rigidbody.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
+        {
+            TakeDamage();
+            Destroy(collided.rigidbody.gameObject);
         }
     }
     public float velocidadeMovimento = 5.0f;
@@ -46,6 +42,20 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Shoot"))
         {
             Instantiate(playerBullet, transform.position,Quaternion.identity).GetComponent<Bullet>().DefineBullet(true,bulletSpeed);
+        }
+    }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return transform.position;
+    }
+
+    public void TakeDamage()
+    {
+        if (--hp < 1)
+        {
+            SceneManager.LoadScene("GameOverScreen");
+            Destroy(this.gameObject);
         }
     }
 }
