@@ -57,7 +57,7 @@ public class EntityScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collided)
     {
-        if (entity.takesBulletDamage && collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(false))
+        if (entity.takesBulletDamage && collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(false))
         {
             if (--hp < 1)
             {

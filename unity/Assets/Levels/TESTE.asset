@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows:
   - spawnPoints:
-    - position: 0
-      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 1221b96c1a86f5647a0fa9578bfb279a, type: 2}
     secondsToNextRow: 5
   - spawnPoints:
     - position: 2
