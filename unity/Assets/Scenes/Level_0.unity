@@ -320,7 +320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsToStart: 3
-  level: {fileID: 11400000, guid: afd3a109dc5bafd42b122c0522b63661, type: 2}
+  levels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   spawnPoints:
   - {fileID: 1388309314}
   - {fileID: 969140210}
@@ -921,8 +924,8 @@ Transform:
   m_GameObject: {fileID: 912010995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.42, z: 7.19}
-  m_LocalScale: {x: 12.037875, y: 2.792409, z: -0.080922954}
+  m_LocalPosition: {x: 0, y: 1, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 74334557}
@@ -985,7 +988,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 20, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &912011000
 MeshRenderer:
@@ -1190,8 +1193,8 @@ Transform:
   m_GameObject: {fileID: 1071429388}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.42, z: -7.34}
-  m_LocalScale: {x: 12.037875, y: 2.792409, z: -0.080922954}
+  m_LocalPosition: {x: 0, y: 1, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 74334557}
@@ -1254,7 +1257,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 20, y: 10, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1071429393
 MeshRenderer:
