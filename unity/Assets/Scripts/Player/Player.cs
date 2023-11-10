@@ -7,9 +7,10 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int hp;
     [SerializeField] private float bulletSpeed;
+    [SerializeField] private HealthDisplay healthDisplay;
     private void OnCollisionEnter(Collision collided)
     {
-        if (collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(true))
+        if (collided.rigidbody.gameObject.GetComponent<Bullet>() && collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
             TakeDamage();
             Destroy(collided.gameObject);
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage()
     {
+        healthDisplay.RemoveHeart();
         if (--hp < 1)
         {
             SceneManager.LoadScene("GameOverScreen");
