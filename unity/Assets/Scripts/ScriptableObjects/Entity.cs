@@ -24,13 +24,14 @@ public class Entity : ScriptableObject
         public int spot;
         //Duração do movimento (em segundos)
         public float movLength;
+        public int newVertSpeed;
     }
     
     public EntityTypes entType;
     public MovementTypes movType;
     public GameObject entityPrefab;
     public int hp;
-    public int speed;
+    public int startingspeed;
     public bool takesBulletDamage;
     public bool doesContactDamage;
     public bool shootsProjectiles;
