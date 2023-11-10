@@ -16,7 +16,7 @@ MonoBehaviour:
   movType: 0
   entityPrefab: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
   hp: 1
-  speed: 2
+  startingspeed: 3
   takesBulletDamage: 1
   doesContactDamage: 1
   shootsProjectiles: 1
@@ -26,7 +26,9 @@ MonoBehaviour:
   spots:
   - spot: 0
     movLength: 3
+    newVertSpeed: 3
   - spot: 6
     movLength: 3
+    newVertSpeed: 3
   selfDestructs: 0
   timeToSelfDestruct: 0
