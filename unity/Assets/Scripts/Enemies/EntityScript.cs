@@ -15,7 +15,7 @@ public class EntityScript : MonoBehaviour
     void Start()
     {
         hp = entity.hp;
-        speed = entity.speed;
+        speed = entity.startingspeed;
         if (entity.shootsProjectiles)
         {
             StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed,entity.projectileRate));
@@ -57,7 +57,7 @@ public class EntityScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collided)
     {
-        if (entity.takesBulletDamage && collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(false))
+        if (entity.takesBulletDamage && collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(false))
         {
             if (--hp < 1)
             {
@@ -103,15 +103,16 @@ public class EntityScript : MonoBehaviour
             foreach (var nSpot in entity.spots)
             {
                 var spotX = levelSpawner.GetSpawnPoint(nSpot.spot);
-                yield return StartCoroutine(MoveNext(spotX,nSpot.movLength));
+                yield return StartCoroutine(MoveNext(spotX,nSpot.movLength,nSpot.newVertSpeed));
             }
         }
     }
-    private IEnumerator MoveNext(float destinationX, float movLength)
+    private IEnumerator MoveNext(float destinationX, float movLength, int newVertSpeed)
     {
         float timePassed = 0.0f;
         Vector3 ePosition = transform.position;
         float initialPosition = ePosition.x;
+        speed = newVertSpeed;
         while (timePassed < movLength)
         {
             transform.position = Vector3.Lerp(new Vector3(initialPosition,ePosition.y,ePosition.z), new Vector3(destinationX,ePosition.y,ePosition.z), timePassed / movLength);

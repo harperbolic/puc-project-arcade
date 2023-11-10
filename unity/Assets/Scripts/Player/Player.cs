@@ -10,15 +10,15 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthDisplay healthDisplay;
     private void OnCollisionEnter(Collision collided)
     {
-        if (collided.rigidbody.gameObject.GetComponent<Bullet>() && collided.rigidbody.gameObject.GetComponent<Bullet>().DamageCheck(true))
+        if (collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
             TakeDamage();
             Destroy(collided.gameObject);
         }
-        else if(collided.rigidbody.gameObject.GetComponent<EntityScript>() && collided.rigidbody.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
+        else if(collided.gameObject.GetComponent<EntityScript>() && collided.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
         {
             TakeDamage();
-            Destroy(collided.rigidbody.gameObject);
+            Destroy(collided.gameObject);
         }
     }
     public float velocidadeMovimento = 5.0f;
