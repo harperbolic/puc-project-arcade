@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSpawner : MonoBehaviour
 {
+	[SerializeField] private AudioClip deathSFX;
+	[SerializeField] private AudioSource audioSource;
 	[SerializeField]
 	private float secondsToStart;
 	[SerializeField] private Level[] levels;
@@ -37,6 +39,8 @@ public class LevelSpawner : MonoBehaviour
 				var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab,
 					spawnPoints[toSpawn.position].transform.position, Quaternion.Euler(0,180f,0));
 				var entityScript = spawnedEntity.AddComponent<EntityScript>();
+				entityScript.audioSource = audioSource;
+				entityScript.deathSFX = deathSFX;
 				entityScript.levelSpawner = this;
 				entityScript.player = player;
 				entityScript.SetEntity(toSpawn.spawnEntity);

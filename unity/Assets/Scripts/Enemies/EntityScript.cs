@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EntityScript : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip deathSFX;
     public Entity entity;
     private int hp;
     private int speed;
@@ -65,6 +67,7 @@ public class EntityScript : MonoBehaviour
                 {
                     //TODO Encher barra de overdrive
                 }
+                audioSource.PlayOneShot(deathSFX,0.7f);
                 Destroy(gameObject);
             }
             Destroy(collided.gameObject);
