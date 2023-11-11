@@ -16,9 +16,9 @@ public class EntityScript : MonoBehaviour
     {
         hp = entity.hp;
         speed = entity.startingspeed;
-        if (entity.shootsProjectiles)
+        if (entity.shootsProjectiles && entity.movType != Entity.MovementTypes.SetMovement)
         {
-            StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed,entity.projectileRate));
+            StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed,entity.projectileRate,true,0));
         }
         if (entity.movType != Entity.MovementTypes.None)
         {
@@ -67,14 +67,27 @@ public class EntityScript : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            Destroy(collided.gameObject);
         }
     }
-    private IEnumerator Shoot (GameObject bullet, float bSpeed, float bRate)
+    private IEnumerator Shoot (GameObject bullet, float bSpeed, float bRate, bool fixedRate, int bulletNum)
     {
-        while (true)
+        if (fixedRate)
         {
-            yield return new WaitForSeconds(bRate);
-            Instantiate(bullet,transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
+            while (true)
+            {
+                yield return new WaitForSeconds(bRate);
+                Instantiate(bullet, transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
+            }
+        }
+        else
+        {
+            float shotDelay = bRate / bulletNum;
+            for (int i = 0; i < bulletNum; i++)
+            {
+                yield return new WaitForSeconds(shotDelay);
+                Instantiate(bullet, transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
+            }
         }
     }
     private IEnumerator FollowMove()
@@ -103,6 +116,10 @@ public class EntityScript : MonoBehaviour
             foreach (var nSpot in entity.spots)
             {
                 var spotX = levelSpawner.GetSpawnPoint(nSpot.spot);
+                if (entity.shootsProjectiles)
+                {
+                    StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed, nSpot.movLength, false, nSpot.shotsPerMove));
+                }
                 yield return StartCoroutine(MoveNext(spotX,nSpot.movLength,nSpot.newVertSpeed));
             }
         }
