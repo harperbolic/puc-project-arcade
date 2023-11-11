@@ -25,6 +25,7 @@ public class Entity : ScriptableObject
         //Duração do movimento (em segundos)
         public float movLength;
         public int newVertSpeed;
+        public int shotsPerMove;
     }
     
     public EntityTypes entType;
