@@ -15,6 +15,6 @@ public class Manager : MonoBehaviour
     {
         Application.targetFrameRate = targetFPS;
 
-	Instantiate(BGMSystem);
+	//Instantiate(BGMSystem);
     }
 }
