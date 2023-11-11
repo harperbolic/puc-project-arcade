@@ -12,4 +12,134 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ec0c47d9714e34bb33155cb14fec18, type: 3}
   m_Name: Level1_1
   m_EditorClassIdentifier: 
-  rows: []
+  rows:
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.2
+  - spawnPoints:
+    - position: 1
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.2
+  - spawnPoints:
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.2
+  - spawnPoints:
+    - position: 4
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.2
+  - spawnPoints:
+    - position: 5
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 1221b96c1a86f5647a0fa9578bfb279a, type: 2}
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 0fd7e6dfbe315b54e9a19d7e0eb68071, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: 0fd7e6dfbe315b54e9a19d7e0eb68071, type: 2}
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 1221b96c1a86f5647a0fa9578bfb279a, type: 2}
+    secondsToNextRow: 1
+  - spawnPoints:
+    - position: 4
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.5
+  - spawnPoints:
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: a6ccaccab4827db4a9dac61d08a92ac0, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: c49579994cca6924d9465535475aa2be, type: 2}
+    secondsToNextRow: 1
+  - spawnPoints:
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 03e9bd5d137d44047a5a0fb5d75d423d, type: 2}
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: cdacb14c31e6f4c4ab0aeff01ea262b5, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 1
+  - spawnPoints:
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: 1221b96c1a86f5647a0fa9578bfb279a, type: 2}
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 0fd7e6dfbe315b54e9a19d7e0eb68071, type: 2}
+    secondsToNextRow: 0.5
+  - spawnPoints:
+    - position: 5
+      spawnEntity: {fileID: 11400000, guid: 1221b96c1a86f5647a0fa9578bfb279a, type: 2}
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 0fd7e6dfbe315b54e9a19d7e0eb68071, type: 2}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 4
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 1
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 0.5
+  - spawnPoints:
+    - position: 4
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 5
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 2
+  - spawnPoints:
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 4
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: c49579994cca6924d9465535475aa2be, type: 2}
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: a6ccaccab4827db4a9dac61d08a92ac0, type: 2}
+    secondsToNextRow: 3
+  - spawnPoints:
+    - position: 1
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 5
+      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    secondsToNextRow: 1
+  - spawnPoints:
+    - position: 3
+      spawnEntity: {fileID: 11400000, guid: b92f063163256354b93e684cf0baf05c, type: 2}
+    secondsToNextRow: 1
+  - spawnPoints:
+    - position: 2
+      spawnEntity: {fileID: 11400000, guid: 1789c38a3257a6042b502983b75ecfea, type: 2}
+    - position: 5
+      spawnEntity: {fileID: 11400000, guid: 68c917bef8d4750488858ad826bafc3c, type: 2}
+    secondsToNextRow: 2
