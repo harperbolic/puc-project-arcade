@@ -70,4 +70,8 @@ public class Player : MonoBehaviour
          audioSource.PlayOneShot(damageSFX,0.7f);   
         }
     }
+    public void Invincible()
+    { }
+    public void Vincible()
+    { }
 }
