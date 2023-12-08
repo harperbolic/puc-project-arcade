@@ -18,8 +18,8 @@ MonoBehaviour:
       spawnEntity: {fileID: 11400000, guid: 7091098e59d19ed4494ce36e47757f40, type: 2}
     secondsToNextRow: 3
   - spawnPoints:
-    - position: 0
-      spawnEntity: {fileID: 11400000, guid: 1e8ee3e32259c64488f033fc457f2b1a, type: 2}
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: 13f02d88d3ddc7940901799ad792831c, type: 2}
     secondsToNextRow: 0.2
   - spawnPoints:
     - position: 1
