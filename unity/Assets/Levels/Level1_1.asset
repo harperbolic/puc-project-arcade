@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rows:
   - spawnPoints:
-    - position: 3
-      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 7091098e59d19ed4494ce36e47757f40, type: 2}
     secondsToNextRow: 3
   - spawnPoints:
-    - position: 0
-      spawnEntity: {fileID: 11400000, guid: 2d1d89caef77d5147a0d1209a9a25508, type: 2}
+    - position: 6
+      spawnEntity: {fileID: 11400000, guid: 13f02d88d3ddc7940901799ad792831c, type: 2}
     secondsToNextRow: 0.2
   - spawnPoints:
     - position: 1

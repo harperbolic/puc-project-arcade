@@ -20,8 +20,8 @@ MonoBehaviour:
   takesBulletDamage: 1
   doesContactDamage: 1
   shootsProjectiles: 1
-  projectilePrefab: {fileID: 6110750578568246658, guid: 5ae0267ddf6e2934c93ea7cde7a09a96, type: 3}
-  projectileSpeed: 5
+  projectilePrefab: {fileID: 7370667698811752632, guid: 3ea2abc084a44fc47b5ee6b1195e54ca, type: 3}
+  projectileSpeed: 2
   projectileRate: 1
   spots:
   - spot: 3
