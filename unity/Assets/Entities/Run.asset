@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entType: 0
   movType: 1
-  entityPrefab: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
+  entityPrefab: {fileID: 2537977478247289798, guid: 95ef7a10689ed7b4f8f7af90483714bc, type: 3}
   hp: 1
   startingspeed: 25
   takesBulletDamage: 1
