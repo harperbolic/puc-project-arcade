@@ -3,7 +3,13 @@ guid: 5b1a4b8e47583414b88c67a99b4b7cab
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - entPart: {fileID: 6076636126139969713, guid: ccdde8ed3d5add84ba28538057caa368, type: 3}
+  - audioSource: {instanceID: 0}
+  - deathSFX: {instanceID: 0}
+  - entity: {instanceID: 0}
+  - levelSpawner: {instanceID: 0}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

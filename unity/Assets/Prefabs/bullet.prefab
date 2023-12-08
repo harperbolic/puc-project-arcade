@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f1267771036b9418894d0f1e022edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGenerate: {fileID: 0}
+  enemyGenerate: {fileID: 0}
 --- !u!65 &3934495217994635605
 BoxCollider:
   m_ObjectHideFlags: 0
