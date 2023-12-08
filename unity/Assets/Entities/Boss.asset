@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc95e5e9414d5e4ea2e425a136374ac, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  entType: 0
+  movType: 3
+  entityPrefab: {fileID: 2860527044779872043, guid: fdfadb0c270e37a4ea98f523a6dcafa7, type: 3}
+  hp: 15
+  startingspeed: 0
+  takesBulletDamage: 1
+  doesContactDamage: 0
+  shootsProjectiles: 1
+  projectilePrefab: {fileID: 7370667698811752632, guid: 3ea2abc084a44fc47b5ee6b1195e54ca, type: 3}
+  projectileSpeed: 1
+  projectileRate: 1
+  spots:
+  - spot: 0
+    movLength: 0.3
+    newVertSpeed: 0
+    shotsPerMove: 2
+  - spot: 6
+    movLength: 0.2
+    newVertSpeed: 0
+    shotsPerMove: 1
+  - spot: 6
+    movLength: 1
+    newVertSpeed: 0
+    shotsPerMove: 1
+  - spot: 3
+    movLength: 2
+    newVertSpeed: 0
+    shotsPerMove: 3
+  selfDestructs: 0
+  timeToSelfDestruct: 0

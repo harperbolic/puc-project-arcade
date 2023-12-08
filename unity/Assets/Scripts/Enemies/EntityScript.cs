@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EntityScript : MonoBehaviour
 {
+    public GameObject entPart;
     public AudioSource audioSource;
     public AudioClip deathSFX;
     public Entity entity;
@@ -18,7 +20,7 @@ public class EntityScript : MonoBehaviour
     {
         hp = entity.hp;
         speed = entity.startingspeed;
-        if (entity.shootsProjectiles && entity.movType != Entity.MovementTypes.SetMovement)
+        if (entity.shootsProjectiles && entity.movType != Entity.MovementTypes.SetMovement && entity.movType != Entity.MovementTypes.Boss)
         {
             StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed,entity.projectileRate,true,0));
         }
@@ -40,6 +42,11 @@ public class EntityScript : MonoBehaviour
     {
         switch (entity.movType)
         { 
+            case Entity.MovementTypes.Boss:
+            {
+                StartCoroutine(BossMove());
+                break;
+            }
             case Entity.MovementTypes.Follow:
             {
                 StartCoroutine(FollowMove());
@@ -61,11 +68,12 @@ public class EntityScript : MonoBehaviour
     {
         if (entity.takesBulletDamage && collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(false))
         {
+            Instantiate(entPart,transform.position,Quaternion.identity);
             if (--hp < 1)
             {
-                if (entity.entType == Entity.EntityTypes.Enemy)
+                if (entity.movType == Entity.MovementTypes.Boss)
                 {
-                    //TODO Encher barra de overdrive
+                    SceneManager.LoadScene("Victory");
                 }
                 audioSource.PlayOneShot(deathSFX,0.7f);
                 Destroy(gameObject);
@@ -83,14 +91,11 @@ public class EntityScript : MonoBehaviour
                 Instantiate(bullet, transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
             }
         }
-        else
+        float shotDelay = bRate / bulletNum;
+        for (int i = 0; i < bulletNum; i++)
         {
-            float shotDelay = bRate / bulletNum;
-            for (int i = 0; i < bulletNum; i++)
-            {
-                yield return new WaitForSeconds(shotDelay);
-                Instantiate(bullet, transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
-            }
+            yield return new WaitForSeconds(shotDelay);
+            Instantiate(bullet, transform).GetComponent<Bullet>().DefineBullet(false, bSpeed);
         }
     }
     private IEnumerator FollowMove()
@@ -124,6 +129,21 @@ public class EntityScript : MonoBehaviour
                     StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed, nSpot.movLength, false, nSpot.shotsPerMove));
                 }
                 yield return StartCoroutine(MoveNext(spotX,nSpot.movLength,nSpot.newVertSpeed));
+            }
+        }
+    }
+    private IEnumerator BossMove()
+    {
+        while (true)
+        {
+            foreach (var nSpot in entity.spots)
+            {
+                var spotX = levelSpawner.GetSpawnPoint(nSpot.spot);
+                if (entity.shootsProjectiles)
+                {
+                    StartCoroutine(Shoot(entity.projectilePrefab, entity.projectileSpeed, nSpot.movLength, false, nSpot.shotsPerMove));
+                }
+                yield return StartCoroutine(MoveNext(spotX,nSpot.movLength,0));
             }
         }
     }

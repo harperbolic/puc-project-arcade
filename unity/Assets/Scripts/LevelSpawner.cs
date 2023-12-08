@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelSpawner : MonoBehaviour
 {
+	[SerializeField] private GameObject entPart;
 	[SerializeField] private AudioClip deathSFX;
 	[SerializeField] private AudioSource audioSource;
 	[SerializeField]
@@ -13,6 +13,7 @@ public class LevelSpawner : MonoBehaviour
 	private int currentLevelIndex;
 	private Level currentLevel;
 	public GameObject[] spawnPoints;
+	[SerializeField] private Entity entBoss;
 
 	[SerializeField] private Player player;
 	private void Start()
@@ -42,6 +43,7 @@ public class LevelSpawner : MonoBehaviour
 				entityScript.audioSource = audioSource;
 				entityScript.deathSFX = deathSFX;
 				entityScript.levelSpawner = this;
+				entityScript.entPart = entPart;
 				entityScript.player = player;
 				entityScript.SetEntity(toSpawn.spawnEntity);
 			}
@@ -50,7 +52,15 @@ public class LevelSpawner : MonoBehaviour
 
 		if (currentLevelIndex + 1 == levels.Length)
 		{
-			SceneManager.LoadScene("Victory");
+			var spawnedEntity = Instantiate(entBoss.entityPrefab,
+				spawnPoints[3].transform.position, Quaternion.Euler(0,180f,0));
+			var entityScript = spawnedEntity.AddComponent<EntityScript>();
+			entityScript.audioSource = audioSource;
+			entityScript.deathSFX = deathSFX;
+			entityScript.levelSpawner = this;
+			entityScript.entPart = entPart;
+			entityScript.player = player;
+			entityScript.SetEntity(entBoss);
 		}
 		else
 		{

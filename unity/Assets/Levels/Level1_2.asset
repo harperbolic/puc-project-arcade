@@ -62,12 +62,12 @@ MonoBehaviour:
       spawnEntity: {fileID: 11400000, guid: c49579994cca6924d9465535475aa2be, type: 2}
     secondsToNextRow: 2
   - spawnPoints:
-    - position: 3
+    - position: 6
       spawnEntity: {fileID: 11400000, guid: 15ee19e8222d1a340a3db14e5b0f56cb, type: 2}
     secondsToNextRow: 0.5
   - spawnPoints:
-    - position: 3
-      spawnEntity: {fileID: 11400000, guid: 15ee19e8222d1a340a3db14e5b0f56cb, type: 2}
+    - position: 0
+      spawnEntity: {fileID: 11400000, guid: 1e8ee3e32259c64488f033fc457f2b1a, type: 2}
     secondsToNextRow: 0.5
   - spawnPoints:
     - position: 1
