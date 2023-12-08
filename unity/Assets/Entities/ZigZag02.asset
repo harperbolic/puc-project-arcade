@@ -22,7 +22,7 @@ MonoBehaviour:
   shootsProjectiles: 1
   projectilePrefab: {fileID: 7370667698811752632, guid: 3ea2abc084a44fc47b5ee6b1195e54ca, type: 3}
   projectileSpeed: 1
-  projectileRate: 3
+  projectileRate: 2
   spots:
   - spot: 0
     movLength: 0.5
