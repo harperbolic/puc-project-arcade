@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entType: 0
   movType: 0
-  entityPrefab: {fileID: 2537977478247289798, guid: 0d67a95c7b01abc41a4821429bd4b49f, type: 3}
+  entityPrefab: {fileID: 2537977478247289798, guid: 256119609c27564458862d6b2766dc51, type: 3}
   hp: 2
   startingspeed: 9
   takesBulletDamage: 1
   doesContactDamage: 1
   shootsProjectiles: 1
-  projectilePrefab: {fileID: 6110750578568246658, guid: 5ae0267ddf6e2934c93ea7cde7a09a96, type: 3}
-  projectileSpeed: 3
-  projectileRate: 3
+  projectilePrefab: {fileID: 7370667698811752632, guid: 3ea2abc084a44fc47b5ee6b1195e54ca, type: 3}
+  projectileSpeed: 1
+  projectileRate: 2
   spots:
   - spot: 0
     movLength: 1
