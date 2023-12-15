@@ -8,6 +8,7 @@ public class Entity : ScriptableObject
         SetMovement, //Move-se para pontos pré-determinados em loop
         Straight, //Move-se para frente sem qualquer movimento para os lados
         Follow, //Avança imitando o movimento lateral do jogador
+        Boss,
         None //Não move-se
     }
     public enum EntityTypes
