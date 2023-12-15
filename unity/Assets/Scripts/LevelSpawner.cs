@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelSpawner : MonoBehaviour
 {
+	[SerializeField] private StageTransition stageTransition;
 	[SerializeField] private GameObject entPart;
 	[SerializeField] private AudioClip deathSFX;
 	[SerializeField] private AudioSource audioSource;
@@ -74,7 +75,10 @@ public class LevelSpawner : MonoBehaviour
 
 	private void SetCurrentLevel()
 	{
-		currentLevelIndex++;
+		if (++currentLevelIndex != 0)
+		{
+			stageTransition.StartTransition();
+		}
 		currentLevel = levels[currentLevelIndex];
 		StartCoroutine(Spawn());		
 	}

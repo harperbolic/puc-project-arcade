@@ -6,32 +6,20 @@ using UnityEngine.UIElements;
 
 public class StageTransition : MonoBehaviour
 {
-    public float transitionTime = 3.0f; // Tempo para a transição completa
-    private bool inTransition = false;
-    private bool inReverseTransition = false;
-    private float timeCount = 0.0f;
+    public float transitionTime = 3.0f; // Tempo para a transiÃ§Ã£o completa
+    private bool inTransition;
+    private bool inReverseTransition;
+    private float timeCount;
+    private Color color = new Color(15,10, 19,1);
     public Material skyboxMaterial2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.T)) //////////// ESSA PARTE DO CÓDIGO É SOMENTE PARA FINS DE TESTE DA FEATURE
-        {                                //////////// DELETAR QUANDO ESTIVER INTEGRADO COM LEVEL MANAGER
-            inTransition = true;
-        }
-
-
         if (inTransition)
         {
             Camera.main.fieldOfView = Mathf.Lerp(60, 30, timeCount);
             Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(30, 0, 0), Quaternion.Euler(50, 0, 0), timeCount);
-            timeCount += Time.deltaTime / transitionTime;
+            timeCount += Time.deltaTime*2 / transitionTime;
 
 
 
@@ -39,6 +27,7 @@ public class StageTransition : MonoBehaviour
             {
                 inTransition = false;
                 RenderSettings.skybox = skyboxMaterial2;
+                RenderSettings.fogColor = color;
                 inReverseTransition = true;
                 timeCount = 0.0f;
             }
@@ -47,7 +36,7 @@ public class StageTransition : MonoBehaviour
         {
             Camera.main.fieldOfView = Mathf.Lerp(30, 60, timeCount);
             Camera.main.transform.rotation = Quaternion.Lerp(Quaternion.Euler(50, 0, 0), Quaternion.Euler(30, 0, 0), timeCount);
-            timeCount += Time.deltaTime / transitionTime;
+            timeCount += Time.deltaTime*2 / transitionTime;
 
 
             if (timeCount >= 1.0f)
@@ -59,7 +48,7 @@ public class StageTransition : MonoBehaviour
         }
     }
 
-    void StartTransition()
+    public void StartTransition()
     {
         inTransition = true;
     }
