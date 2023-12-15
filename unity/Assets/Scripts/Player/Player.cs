@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject playerPart;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip deathSFX, damageSFX, shootSFX, overdriveSFX,enemyDeathSFX;
     [SerializeField] private int hp;
@@ -15,11 +16,13 @@ public class Player : MonoBehaviour
     {
         if (collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
         {
+            Instantiate(playerPart, gameObject.transform.position,Quaternion.identity);
             TakeDamage();
             Destroy(collided.gameObject);
         }
         else if(collided.gameObject.GetComponent<EntityScript>() && collided.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
         {
+            Instantiate(playerPart, gameObject.transform.position,Quaternion.identity);
             TakeDamage();
             audioSource.PlayOneShot(enemyDeathSFX, 0.7f);
             Destroy(collided.gameObject);
