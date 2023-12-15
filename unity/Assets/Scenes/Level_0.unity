@@ -717,9 +717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d26f0f738cefd409cc52c8d822c634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOverdrive: 0
-  overdrivePower: 2
   overdriveTime: 0.2
+  overdrivePower: 0.6
+  returnTime: 0.4
 --- !u!65 &285738678
 BoxCollider:
   m_ObjectHideFlags: 0
