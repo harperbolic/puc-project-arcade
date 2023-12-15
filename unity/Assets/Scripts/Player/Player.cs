@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            
+            gameObject.GetComponent<Collider>().enabled = false;
+        }
         // Obtém a entrada do jogador no eixo horizontal (teclas A e D, setas esquerda e direita, etc.)
         float movimentoHorizontal = Input.GetAxis("Horizontal");
 
