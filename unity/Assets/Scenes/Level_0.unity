@@ -406,6 +406,7 @@ MonoBehaviour:
   - {fileID: 1302152572}
   entBoss: {fileID: 11400000, guid: f827b78e338ce7c4eacbb5ed78a6067c, type: 2}
   player: {fileID: 285738676}
+  overdrive: {fileID: 285738677}
 --- !u!1001 &141699380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,9 +718,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d26f0f738cefd409cc52c8d822c634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOverdrive: 0
-  overdrivePower: 2
+  canOverdrive: 0
   overdriveTime: 0.2
+  overdrivePower: 0.6
+  returnTime: 0.4
 --- !u!65 &285738678
 BoxCollider:
   m_ObjectHideFlags: 0

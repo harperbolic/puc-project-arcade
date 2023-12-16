@@ -6,26 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    private bool canTakeDamage = true;
+    private bool isGodMode;
     [SerializeField] private GameObject playerPart;
     [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip deathSFX, damageSFX, shootSFX, overdriveSFX,enemyDeathSFX;
+    [SerializeField] private AudioClip deathSFX, damageSFX, shootSFX, enemyDeathSFX;
     [SerializeField] private int hp;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private HealthDisplay healthDisplay;
     private void OnCollisionEnter(Collision collided)
     {
-        if (collided.gameObject.GetComponent<Bullet>() && collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
+        if (canTakeDamage)
         {
-            Instantiate(playerPart, gameObject.transform.position,Quaternion.identity);
-            TakeDamage();
-            Destroy(collided.gameObject);
+            if (collided.gameObject.GetComponent<Bullet>() &&
+                collided.gameObject.GetComponent<Bullet>().DamageCheck(true))
+            {
+                Instantiate(playerPart, gameObject.transform.position, Quaternion.identity);
+                TakeDamage();
+                Destroy(collided.gameObject);
+            }
+            else if (collided.gameObject.GetComponent<EntityScript>() &&
+                     collided.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
+            {
+                Instantiate(playerPart, gameObject.transform.position, Quaternion.identity);
+                TakeDamage();
+                audioSource.PlayOneShot(enemyDeathSFX, 0.7f);
+                Destroy(collided.gameObject);
+            }
         }
-        else if(collided.gameObject.GetComponent<EntityScript>() && collided.gameObject.GetComponent<EntityScript>().entity.doesContactDamage)
+        else
         {
-            Instantiate(playerPart, gameObject.transform.position,Quaternion.identity);
-            TakeDamage();
-            audioSource.PlayOneShot(enemyDeathSFX, 0.7f);
-            Destroy(collided.gameObject);
+            if (!(collided.gameObject.GetComponent<Bullet>() &&
+                collided.gameObject.GetComponent<Bullet>().DamageCheck(false)))
+            {
+                Destroy(collided.gameObject);
+            }
         }
     }
     public float velocidadeMovimento = 5.0f;
@@ -37,8 +52,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            
-            gameObject.GetComponent<Collider>().enabled = false;
+            isGodMode = true;
+            canTakeDamage = false;
         }
         // Obtém a entrada do jogador no eixo horizontal (teclas A e D, setas esquerda e direita, etc.)
         float movimentoHorizontal = Input.GetAxis("Horizontal");
@@ -76,6 +91,14 @@ public class Player : MonoBehaviour
         else
         {
          audioSource.PlayOneShot(damageSFX,0.7f);   
+        }
+    }
+
+    public void ChangeInvincibility()
+    {
+        if (!isGodMode)
+        {
+            canTakeDamage = !canTakeDamage;
         }
     }
 }
