@@ -16,6 +16,8 @@ public class EntityScript : MonoBehaviour
     public LevelSpawner levelSpawner;
     [NonSerialized]
     public Player player;
+
+    public Overdrive overdrive;
     void Start()
     {
         hp = entity.hp;
@@ -76,6 +78,7 @@ public class EntityScript : MonoBehaviour
                     SceneManager.LoadScene("Victory");
                 }
                 audioSource.PlayOneShot(deathSFX,0.7f);
+                overdrive.canOverdrive = true;
                 Destroy(gameObject);
             }
             Destroy(collided.gameObject);
