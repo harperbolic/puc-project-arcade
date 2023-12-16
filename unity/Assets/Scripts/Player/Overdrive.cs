@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Overdrive : MonoBehaviour
 {
-    private bool isOverdrive, canOverdrive, back;
+    public bool canOverdrive;
+    private bool isOverdrive, back;
     private Vector3 initialPosition, targetPosition;
     private float timeCount = 0.0f;
     private Player mainScript;
@@ -18,9 +19,6 @@ public class Overdrive : MonoBehaviour
         isOverdrive = false;
         mainScript = GetComponent<Player>();
     }
-
-
-
     void Update()
     {
         if (canOverdrive && Input.GetButtonDown("Overdrive"))
@@ -28,7 +26,7 @@ public class Overdrive : MonoBehaviour
             initialPosition = transform.position;
             isOverdrive = true;
             canOverdrive = false;
-            mainScript.Invincible();
+            mainScript.ChangeInvincibility();
         }
         if (isOverdrive)
         {
@@ -53,15 +51,9 @@ public class Overdrive : MonoBehaviour
                 transform.position = initialPosition;
                 back = false;
                 timeCount = 0.0f;
-                mainScript.Vincible();
+                mainScript.ChangeInvincibility();
             }
         }
 
     }
-
-    void AllowOverdrive()
-    {
-        canOverdrive = true;
-    }
-
 }

@@ -17,6 +17,7 @@ public class LevelSpawner : MonoBehaviour
 	[SerializeField] private Entity entBoss;
 
 	[SerializeField] private Player player;
+	[SerializeField] private Overdrive overdrive;
 	private void Start()
 	{
 		currentLevelIndex = -1;
@@ -38,30 +39,14 @@ public class LevelSpawner : MonoBehaviour
 		{
 			foreach (var toSpawn in row.spawnPoints)
 			{
-				var spawnedEntity = Instantiate(toSpawn.spawnEntity.entityPrefab,
-					spawnPoints[toSpawn.position].transform.position, Quaternion.Euler(0,180f,0));
-				var entityScript = spawnedEntity.AddComponent<EntityScript>();
-				entityScript.audioSource = audioSource;
-				entityScript.deathSFX = deathSFX;
-				entityScript.levelSpawner = this;
-				entityScript.entPart = entPart;
-				entityScript.player = player;
-				entityScript.SetEntity(toSpawn.spawnEntity);
+				SpawnEntity(toSpawn.spawnEntity,toSpawn.position);
 			}
 			yield return new WaitForSeconds(row.secondsToNextRow);
 		}
 
 		if (currentLevelIndex + 1 == levels.Length)
 		{
-			var spawnedEntity = Instantiate(entBoss.entityPrefab,
-				spawnPoints[3].transform.position, Quaternion.Euler(0,180f,0));
-			var entityScript = spawnedEntity.AddComponent<EntityScript>();
-			entityScript.audioSource = audioSource;
-			entityScript.deathSFX = deathSFX;
-			entityScript.levelSpawner = this;
-			entityScript.entPart = entPart;
-			entityScript.player = player;
-			entityScript.SetEntity(entBoss);
+			SpawnEntity(entBoss, 3);
 		}
 		else
 		{
@@ -81,5 +66,19 @@ public class LevelSpawner : MonoBehaviour
 		}
 		currentLevel = levels[currentLevelIndex];
 		StartCoroutine(Spawn());		
+	}
+
+	private void SpawnEntity(Entity entity, int position)
+	{
+		var spawnedEntity = Instantiate(entity.entityPrefab,
+			spawnPoints[position].transform.position, Quaternion.Euler(0,180f,0));
+		var entityScript = spawnedEntity.AddComponent<EntityScript>();
+		entityScript.audioSource = audioSource;
+		entityScript.deathSFX = deathSFX;
+		entityScript.levelSpawner = this;
+		entityScript.entPart = entPart;
+		entityScript.player = player;
+		entityScript.overdrive = overdrive;
+		entityScript.SetEntity(entity);
 	}
 }
